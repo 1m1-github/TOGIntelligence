@@ -83,6 +83,7 @@ end
 const JULIA_PREPEND = "```julia\n"
 const JULIA_POSTPEND = "\n```"
 function extract_julia_blocks(text::String)
+    @show "extract_julia_blocks", text
     text = strip(text)
     blocks = split(text, JULIA_PREPEND)
     length(blocks) == 1 && return text # no JULIA_PREPEND, all Julia
